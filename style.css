@@ -208,7 +208,7 @@ body {
 
 .image-card img {
     width: 100%;
-    max-width: 240px; /* μικρότερο μέγεθος */
+    max-width: 220px; /* μικρότερο μέγεθος */
     border-radius: 12px;
     cursor: pointer;
     transform: translateY(20px);
@@ -222,7 +222,7 @@ body {
     box-shadow: 0 15px 25px rgba(0,0,0,0.25);
 }
 
-/* animation για scroll (fade-in up) */
+/* fade-in animation */
 .image-card.visible img {
     opacity: 1;
     transform: translateY(0);
@@ -238,13 +238,20 @@ body {
 .video-grid {
     display: grid;
     gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .video-card iframe {
     width: 100%;
-    min-height: 200px;
+    height: 160px; /* μικρότερο ύψος */
     border-radius: 12px;
     border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card iframe:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
 /* FOOTER */
@@ -271,5 +278,9 @@ body {
     
     .image-card img {
         max-width: 100%;
+    }
+
+    .video-card iframe {
+        height: 140px;
     }
 }
