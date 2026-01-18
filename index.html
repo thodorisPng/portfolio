@@ -14,35 +14,14 @@
     transform: translateY(20px);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
+    max-width: 180px; /* splash image smaller */
 }
 .image-card.visible img {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Video grid styling */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-}
-
-/* Make videos rectangular and responsive */
-.video-card iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* keeps rectangular shape */
-    border-radius: 12px;
-    border: none;
-}
-
-.video-card span {
-    display: block;
-    margin-top: 6px;
-    color: #9ca3af;
-    font-size: 0.85rem;
-}
-
-/* Image card styling */
+/* Image grid */
 .image-grid {
     display: flex;
     flex-wrap: wrap;
@@ -58,14 +37,6 @@
     overflow: hidden;
 }
 
-.image-card img {
-    width: 100%;
-    max-width: 240px;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-/* Fade-in hover effect for image */
 .image-card img:hover {
     transform: scale(1.05) rotate(1deg);
     box-shadow: 0 15px 25px rgba(0,0,0,0.25);
@@ -77,7 +48,28 @@
     font-size: 0.85rem;
 }
 
-/* Responsive hero */
+/* Video grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* rectangular shape */
+    border-radius: 12px;
+    border: none;
+}
+
+.video-card span {
+    display: block;
+    margin-top: 6px;
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
     .hero h1 {
         font-size: 2.4rem;
@@ -102,7 +94,6 @@
         Designing meaningful digital experiences<br>
         with a focus on clarity, usability & aesthetics
     </p>
-
     <div class="hero-actions">
         <a href="#projects" class="btn primary">View Work</a>
         <a href="#" class="btn ghost">LinkedIn</a>
@@ -163,11 +154,11 @@
 <section class="section" id="case-study">
     <h2>Case Study – Social Networking App for Musicians</h2>
 
-    <!-- Splash Image -->
+    <!-- Splash Screen Image -->
     <h3 class="sub">Onboarding & Profile Setup</h3>
     <div class="image-grid">
         <div class="image-card">
-            <img src="images/1.splash_screen/splash.png" alt="Splash Screen">
+            <img src="images/1.splash_screen/images/splash_screen/splash.png" alt="Splash Screen">
             <span>Splash Screen</span>
         </div>
     </div>
@@ -205,6 +196,7 @@
     <p>© 2026 Panagos Theodoros</p>
 </footer>
 
+<!-- JS for fade-in splash -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const imgCard = document.querySelector(".image-card");
