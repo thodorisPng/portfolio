@@ -208,7 +208,7 @@ body {
 
 .image-card img {
     width: 100%;
-    max-width: 200px; /* smaller splash image */
+    max-width: 240px; /* μικρότερο μέγεθος */
     border-radius: 12px;
     cursor: pointer;
     transform: translateY(20px);
@@ -216,11 +216,13 @@ body {
     transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
 }
 
+/* hover effect */
 .image-card img:hover {
     transform: scale(1.05) rotate(1deg);
     box-shadow: 0 15px 25px rgba(0,0,0,0.25);
 }
 
+/* animation για scroll (fade-in up) */
 .image-card.visible img {
     opacity: 1;
     transform: translateY(0);
@@ -240,7 +242,7 @@ body {
 
 .video-card iframe {
     width: 100%;
-    min-height: 180px; /* more rectangular */
+    min-height: 200px;
     border-radius: 12px;
     border: none;
 }
