@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Inline CSS for the fade-in image animation */
+        /* Fade-in animation for splash image */
         .image-card img {
             transform: translateY(20px);
             opacity: 0;
@@ -18,6 +18,27 @@
         .image-card.visible img {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Video grid styling */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 180px; /* smaller height */
+            border-radius: 12px;
+            border: none;
+        }
+
+        .video-card span {
+            display: block;
+            margin-top: 6px;
+            color: #9ca3af;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -105,8 +126,7 @@
     <!-- Splash Screen Image -->
     <div class="image-grid">
         <div class="image-card">
-            <img src="images/1.splash_screen/splash.png" alt="Splash Screen">
-
+            <img src="images/1.splash_screen/images/splash_screen/splash.png" alt="Splash Screen">
             <span>Splash Screen</span>
         </div>
     </div>
@@ -129,11 +149,6 @@
             <iframe src="https://drive.google.com/file/d/1Q6zINe7Vl1qLTAfGNkdtOYYvbnCUkZhW/preview" allowfullscreen></iframe>
             <span>4. Profile Setup – Location, Bio & Social Media</span>
         </div>
-    </div>
-
-    <!-- PROFILE -->
-    <h3 class="sub">Profile Management</h3>
-    <div class="video-grid">
         <div class="video-card">
             <iframe src="https://drive.google.com/file/d/1lTB1kQJbPvipa83kgltNm0vUtWTUrPPK/preview" allowfullscreen></iframe>
             <span>5. My Profile + Inline Edit Roles</span>
@@ -146,11 +161,6 @@
             <iframe src="https://drive.google.com/file/d/1ctN5Q1pLAGwbRdl6sCdrKK4YpNdAnnUM/preview" allowfullscreen></iframe>
             <span>7. Other User Profile</span>
         </div>
-    </div>
-
-    <!-- DISCOVERY -->
-    <h3 class="sub">Discovery & Engagement</h3>
-    <div class="video-grid">
         <div class="video-card">
             <iframe src="https://drive.google.com/file/d/1vf_kLgyxxUcRaac45ETNdvZl5BLd0s6Y/preview" allowfullscreen></iframe>
             <span>8. Discover Screen</span>
@@ -190,10 +200,9 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const imgCard = document.querySelector(".image-card");
-    imgCard.classList.add("visible");
+    if(imgCard) imgCard.classList.add("visible");
 });
 </script>
 
 </body>
 </html>
-
