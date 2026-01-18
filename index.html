@@ -7,6 +7,19 @@
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Inline CSS for the fade-in image animation */
+        .image-card img {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .image-card.visible img {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
@@ -171,6 +184,14 @@
 <footer class="footer">
     <p>© 2026 Panagos Theodoros</p>
 </footer>
+
+<!-- JS for fade-in -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const imgCard = document.querySelector(".image-card");
+    imgCard.classList.add("visible");
+});
+</script>
 
 </body>
 </html>
