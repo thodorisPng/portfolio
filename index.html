@@ -9,18 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* General styling for images and videos */
+/* Fade-in animation for splash image */
 .image-card img {
     transform: translateY(20px);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
-    max-width: 180px;
+    max-width: 180px; /* smaller splash image */
 }
 .image-card.visible img {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Image grid */
 .image-grid {
     display: flex;
     flex-wrap: wrap;
@@ -47,6 +48,7 @@
     font-size: 0.85rem;
 }
 
+/* Video grid */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -55,7 +57,7 @@
 
 .video-card iframe {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 9; /* rectangular shape */
     border-radius: 12px;
     border: none;
 }
@@ -65,31 +67,6 @@
     margin-top: 6px;
     color: #9ca3af;
     font-size: 0.85rem;
-}
-
-/* Section spacing */
-.section {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
-
-.section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-}
-
-.section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: var(--accent);
-}
-
-.text {
-    max-width: 650px;
-    color: #9ca3af;
-    line-height: 1.8;
-    margin-bottom: 20px;
 }
 
 /* Responsive */
@@ -105,12 +82,17 @@
 </head>
 <body>
 
+<!-- BACKGROUND -->
+<div class="bg-blur bg-one"></div>
+<div class="bg-blur bg-two"></div>
+
 <!-- HERO -->
 <header class="hero">
     <span class="tag">UX/UI Designer</span>
     <h1>Panagos Theodoros</h1>
     <p class="hero-subtitle">
-        Designing meaningful digital experiences with a focus on clarity, usability & aesthetics
+        Designing meaningful digital experiences<br>
+        with a focus on clarity, usability & aesthetics
     </p>
     <div class="hero-actions">
         <a href="#projects" class="btn primary">View Work</a>
@@ -120,12 +102,28 @@
 
 <!-- ABOUT -->
 <section class="section">
-    <h2>About Me</h2>
+    <h2>About</h2>
     <p class="text">
         Junior UX/UI Designer with a background in Industrial Design and hands-on experience
         in designing and developing mobile applications. Strong focus on user-centered
-        design, interaction flows, and clean visual systems.
+        design, interaction flows and clean visual systems.
     </p>
+</section>
+
+<!-- SKILLS -->
+<section class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>UX Research</span>
+        <span>Personas</span>
+        <span>User Flows</span>
+        <span>Wireframing</span>
+        <span>UI Design</span>
+        <span>Figma</span>
+        <span>Flutter</span>
+        <span>Firebase</span>
+        <span>Java</span>
+    </div>
 </section>
 
 <!-- PROJECTS -->
@@ -139,6 +137,12 @@
                 End-to-end UX/UI design and mobile development of a social networking
                 application focused on connecting musicians.
             </p>
+            <ul>
+                <li>User research & personas</li>
+                <li>User flows & onboarding</li>
+                <li>High-fidelity UI</li>
+                <li>Flutter & Firebase</li>
+            </ul>
             <div class="project-actions">
                 <a href="#case-study" class="btn primary">View Case Study</a>
             </div>
@@ -150,64 +154,8 @@
 <section class="section" id="case-study">
     <h2>Case Study – Social Networking App for Musicians</h2>
 
-    <!-- 1. Problem Statement -->
-    <h3 class="sub">Problem Statement</h3>
-    <p class="text">
-        Many amateur musicians struggle to connect with like-minded performers for collaborations,
-        practice sessions, or gigs. The goal was to design an app that makes networking seamless,
-        intuitive, and engaging.
-    </p>
-
-    <!-- 2. Research & Findings -->
-    <h3 class="sub">Research Findings</h3>
-    <p class="text">
-        Conducted interviews with 15 musicians and surveyed 50+ users to identify pain points:
-        difficulty finding collaborators, unclear profiles, and fragmented communication tools.
-    </p>
-    <div class="image-grid">
-        <div class="image-card">
-            <img src="images/research.png" alt="Research Findings">
-            <span>Key Insights</span>
-        </div>
-    </div>
-
-    <!-- 3. Personas -->
-    <h3 class="sub">Personas</h3>
-    <div class="image-grid">
-        <div class="image-card">
-            <img src="images/persona1.png" alt="Persona 1">
-            <span>Persona: Alex</span>
-        </div>
-        <div class="image-card">
-            <img src="images/persona2.png" alt="Persona 2">
-            <span>Persona: Maria</span>
-        </div>
-    </div>
-
-    <!-- 4. Wireframes -->
-    <h3 class="sub">Wireframes</h3>
-    <div class="image-grid">
-        <div class="image-card">
-            <img src="images/wireframe1.png" alt="Wireframe 1">
-            <span>Wireframe: Onboarding</span>
-        </div>
-        <div class="image-card">
-            <img src="images/wireframe2.png" alt="Wireframe 2">
-            <span>Wireframe: Profile Setup</span>
-        </div>
-    </div>
-
-    <!-- 5. Medium-Fidelity Screens -->
-    <h3 class="sub">Medium-Fidelity UI</h3>
-    <div class="image-grid">
-        <div class="image-card">
-            <img src="images/mediumfidelity1.png" alt="Medium-Fidelity Screen 1">
-            <span>Profile Overview</span>
-        </div>
-    </div>
-
-    <!-- 6. High-Fidelity UI / Videos -->
-    <h3 class="sub">High-Fidelity Screens & Interactions</h3>
+    <!-- Splash Screen Image -->
+    <h3 class="sub">Onboarding & Profile Setup</h3>
     <div class="image-grid">
         <div class="image-card">
             <img src="images/splash.png" alt="Splash Screen">
@@ -215,6 +163,7 @@
         </div>
     </div>
 
+    <!-- Videos -->
     <div class="video-grid">
         <div class="video-card">
             <iframe src="https://drive.google.com/file/d/18KMzlryDrX75_TO4EwDlzj9XerrQghVl/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -241,24 +190,17 @@
             <span>6. Music I Can Perform + Answers</span>
         </div>
     </div>
-
-    <!-- 7. Reflection / Outcome -->
-    <h3 class="sub">Outcome & Reflection</h3>
-    <p class="text">
-        The app successfully facilitated musician networking. Feedback indicated improved
-        collaboration opportunities and higher user satisfaction. Lessons learned include
-        improving onboarding clarity and prioritizing scalable profile designs.
-    </p>
 </section>
 
 <footer class="footer">
     <p>© 2026 Panagos Theodoros</p>
 </footer>
 
+<!-- JS for fade-in splash -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const imgCards = document.querySelectorAll(".image-card");
-    imgCards.forEach(card => card.classList.add("visible"));
+    const imgCard = document.querySelector(".image-card");
+    if(imgCard) imgCard.classList.add("visible");
 });
 </script>
 
