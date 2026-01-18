@@ -1,46 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Panagos Theodoros | UX/UI Designer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Panagos Theodoros | UX/UI Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        /* Fade-in animation for splash image */
-        .image-card img {
-            transform: translateY(20px);
-            opacity: 0;
-            transition: transform 0.5s ease, opacity 0.5s ease;
-        }
-        .image-card.visible img {
-            opacity: 1;
-            transform: translateY(0);
-        }
+<style>
+/* Fade-in animation for splash image */
+.image-card img {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.image-card.visible img {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-        /* Video grid styling */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+/* Video grid styling */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
 
-        .video-card iframe {
-            width: 100%;
-            height: 180px; /* smaller height */
-            border-radius: 12px;
-            border: none;
-        }
+/* Make videos rectangular and responsive */
+.video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* keeps rectangular shape */
+    border-radius: 12px;
+    border: none;
+}
 
-        .video-card span {
-            display: block;
-            margin-top: 6px;
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-    </style>
+.video-card span {
+    display: block;
+    margin-top: 6px;
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* Image card styling */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.image-card img {
+    width: 100%;
+    max-width: 240px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* Fade-in hover effect for image */
+.image-card img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+.image-card span {
+    margin-top: 8px;
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* Responsive hero */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+    .image-card img {
+        max-width: 100%;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -92,7 +138,6 @@
 <!-- PROJECTS -->
 <section class="section" id="projects">
     <h2>Selected Work</h2>
-
     <div class="projects">
         <div class="project featured">
             <span class="project-tag">Diploma Project</span>
@@ -101,14 +146,12 @@
                 End-to-end UX/UI design and mobile development of a social networking
                 application focused on connecting musicians.
             </p>
-
             <ul>
                 <li>User research & personas</li>
                 <li>User flows & onboarding</li>
                 <li>High-fidelity UI</li>
                 <li>Flutter & Firebase</li>
             </ul>
-
             <div class="project-actions">
                 <a href="#case-study" class="btn primary">View Case Study</a>
             </div>
@@ -120,13 +163,11 @@
 <section class="section" id="case-study">
     <h2>Case Study – Social Networking App for Musicians</h2>
 
-    <!-- ONBOARDING -->
+    <!-- Splash Image -->
     <h3 class="sub">Onboarding & Profile Setup</h3>
-
-    <!-- Splash Screen Image -->
     <div class="image-grid">
         <div class="image-card">
-            <img src="images/1.splash_screen/images/splash_screen/splash.png" alt="Splash Screen">
+            <img src="images/1.splash_screen/splash.png" alt="Splash Screen">
             <span>Splash Screen</span>
         </div>
     </div>
@@ -157,38 +198,6 @@
             <iframe src="https://drive.google.com/file/d/1s-oL1rgRG_In_Y5RqeI9vLtteaJ6uqct/preview" allowfullscreen></iframe>
             <span>6. Music I Can Perform + Answers</span>
         </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1ctN5Q1pLAGwbRdl6sCdrKK4YpNdAnnUM/preview" allowfullscreen></iframe>
-            <span>7. Other User Profile</span>
-        </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1vf_kLgyxxUcRaac45ETNdvZl5BLd0s6Y/preview" allowfullscreen></iframe>
-            <span>8. Discover Screen</span>
-        </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1vfoOZkTzUATYiL0pyz8TKFEmJa9z-qKM/preview" allowfullscreen></iframe>
-            <span>9. Musicians / People</span>
-        </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1yfoaPdSqjixs1ulPkUEU7BcCgB8Z0R2w/preview" allowfullscreen></iframe>
-            <span>10. Ads Screen</span>
-        </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1O0wHcXQeOv4XlEh2c293-eaoiudMvqTw/preview" allowfullscreen></iframe>
-            <span>11. Create Ad</span>
-        </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1R4_N4znGJ-QX3gRflK0TUNmdDfivHAr2/preview" allowfullscreen></iframe>
-            <span>12. Song of the Day + Songs Tab</span>
-        </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1zuSVMnxtS75gYkzWKAxI0QMiRMlt1F7p/preview" allowfullscreen></iframe>
-            <span>13. Home – Posts</span>
-        </div>
-        <div class="video-card">
-            <iframe src="https://drive.google.com/file/d/1elcMJ25OJ03M8-DjShkiv01zA6fp4Ia7/preview" allowfullscreen></iframe>
-            <span>14. Notifications</span>
-        </div>
     </div>
 </section>
 
@@ -196,7 +205,6 @@
     <p>© 2026 Panagos Theodoros</p>
 </footer>
 
-<!-- JS for fade-in -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const imgCard = document.querySelector(".image-card");
