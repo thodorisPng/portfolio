@@ -242,7 +242,7 @@ body {
 
 .video-card iframe {
     width: 100%;
-    min-height: 200px;
+    height: 140px; /* Αλλαγή διαστάσεων εδώ */
     border-radius: 12px;
     border: none;
 }
@@ -271,5 +271,9 @@ body {
     
     .image-card img {
         max-width: 100%;
+    }
+
+    .video-card iframe {
+        height: 120px; /* responsive μικρότερο ύψος */
     }
 }
